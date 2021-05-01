@@ -1,0 +1,18 @@
+TEST DATABASE
+docker run -p 5432:5432 -d \
+	-e POSTGRES_PASSWORD=postgres \
+	-e POSTGRES_USER=postgres \
+	-e POSTGRES_DB=test \
+	-v pgdata:/var/lib/postgresql/data \
+	postgres
+
+COURSE-APP DATABASE
+docker run -p 5432:5432 -d \
+        -e POSTGRES_PASSWORD=postgres \
+        -e POSTGRES_USER=postgres \
+        -e POSTGRES_DB=course-app \
+        -v pgdata:/var/lib/postgresql/data \
+        postgres
+
+MYSQL
+https://migueldoctor.medium.com/run-mysql-phpmyadmin-locally-in-3-steps-using-docker-74eb735fa1fc

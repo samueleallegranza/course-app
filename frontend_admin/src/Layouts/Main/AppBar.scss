@@ -1,0 +1,28 @@
+.AppBar-container{
+    height: 100%;
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+    float: right;
+
+
+    .element {
+        margin: 0 15px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon {
+        font-size: 40px;
+    }
+
+    .avatar {
+        border-radius: 50%;
+
+    }
+
+
+}
