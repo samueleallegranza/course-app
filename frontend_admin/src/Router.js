@@ -3,26 +3,37 @@ import {
     BrowserRouter,
     Switch,
     Route,
-    Link
+    Redirect
 } from "react-router-dom";
 
 // Layouts
 import MainLayout from './Layouts/Main/Main';
 
+// Views
+import Users from './Views/Users/Users';
+
 const Router = () => {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/">
+                <Redirect exact from="/" to="/users" />
+
+                <Route path="/users"> 
                     <MainLayout>
-                        <h1>Home</h1>
+                        <Users />
                     </ MainLayout>
                 </Route>
-                <Route path="/users">
-                    <h1>Users</h1>
+
+                <Route path="/rooms">
+                    <MainLayout>
+                        <h1>Rooms</h1>
+                    </ MainLayout>
                 </Route>
-                <Route path="/courses">
-                    <h1>Courses</h1>
+
+                <Route path="/teachers">
+                    <MainLayout>
+                        <h1>Teachers</h1>
+                    </ MainLayout>
                 </Route>
             </Switch>
         </BrowserRouter>    

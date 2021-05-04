@@ -13,6 +13,7 @@
         height: 95%;
         border-radius: 50px;
         background: white;
+        box-shadow:  20px 20px 60px #a4a4a4, -20px -20px 60px #ffffff;
 
         display: grid;
         grid-template-columns: 350px auto;
@@ -49,11 +50,14 @@
 
     .Content {
         grid-area: content;
-        background: #f7f6fb;;   
+        background: #f7f6fb;   
         border-top-left-radius: 60px;
         border-top-right-radius: 0px;
         border-bottom-left-radius: 0px;
         border-bottom-right-radius: 60px;
+
+        padding: 20px 50px;
+        color: #515151;
     }
 }
 

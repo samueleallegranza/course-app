@@ -14,7 +14,7 @@ const AppBar = () => {
                 <NotificationsIcon className="icon" />
             </div>
             <div className="element">
-                <img className="avatar" src={require('../../media/avatar.png').default} alt="logo"/>
+                <img className="avatar" src={require('../../Media/avatar.png').default} alt="logo"/>
             </div>
         </div>
     );

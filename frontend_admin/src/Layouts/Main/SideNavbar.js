@@ -1,42 +1,43 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import './SideNavbar.scss';
 
 import PeopleIcon from '@material-ui/icons/People';
-import MeetingRoomIcon from '@material-ui/icons/MeetingRoom';
+import RoomIcon from '@material-ui/icons/Room';
+import LocalLibraryIcon from '@material-ui/icons/LocalLibrary';
 
 const links = [
     {
-        name: "Users",
-        path: "/users",
-        icon: PeopleIcon
+        'name': "Users",
+        'url': "/users",
+        'icon': PeopleIcon
+    },
+    {
+        'name': "Teachers",
+        'url': "/teachers",
+        'icon': LocalLibraryIcon
     },
     {
         'name': "Rooms",
-        'path': "/rooms",
-        'icon': MeetingRoomIcon
-    }
+        'url': "/rooms",
+        'icon': RoomIcon
+    },
 ]
 
 const SideNavbar = () => {
     return(
         <div className="SideNavbar-container">
             {
-                links.map((element, index) => {
+                links.map((link, index) => {
+                    const Icon = link.icon;
                     return (
-                        <div>{element.name}</div>
+                        <NavLink to={link.url} className='element' activeClassName="active">
+                            <Icon className="icon" />
+                            <span className="text">{link.name}</span>
+                        </NavLink>
                     )
                 })
             }
-            <div className="element">
-                <Link to="/users">Users</Link>
-            </div>
-            <div className="element">
-                <Link to="/teachers">Teachers</Link>
-            </div>
-            <div className="element">
-                <Link to="/rooms">Rooms</Link>
-            </div>
         </div>
     );
 }
