@@ -1,0 +1,17 @@
+.ButtonIcon {
+    background-color: #5568e8;
+	border: none;
+	cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 25%;
+    border-radius: 25%;
+
+    svg {
+        font-size: 20px;
+        color: white;
+    }
+}

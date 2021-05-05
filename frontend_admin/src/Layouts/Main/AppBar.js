@@ -1,6 +1,8 @@
 import React from 'react';
 import './AppBar.scss';
 
+import Avatar from '../../Components/Avatar/Avatar';
+
 import PowerSettingsNewIcon from '@material-ui/icons/PowerSettingsNew';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 
@@ -14,7 +16,7 @@ const AppBar = () => {
                 <NotificationsIcon className="icon" />
             </div>
             <div className="element">
-                <img className="avatar" src={require('../../Media/avatar.png').default} alt="logo"/>
+                <Avatar />
             </div>
         </div>
     );

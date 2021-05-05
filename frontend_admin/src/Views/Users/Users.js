@@ -1,8 +1,8 @@
 import React from 'react'
 import "./Users.scss"
-import "./User-row.scss"
 
-import SearchIcon from '@material-ui/icons/Search';
+import UserList from './UserList';
+import InputText from '../../Components/Inputs/InputText/InputText';
 
 const users = [
     {
@@ -28,9 +28,6 @@ const users = [
     },
 ]
 
-const UserCard = () => {
-    return (<div></div>)
-}
 
 const Users = () => {
     return (
@@ -38,37 +35,12 @@ const Users = () => {
             <h1>Users</h1>
 
             <div className="Filter">
-                <div className="InputWithIcon">
-                    <SearchIcon className="icon" />
-                    <input type="text" placeholder="Search"></input>
-                </div>
-                <div className="Selector">
-                    <input type="text" placeholder="Search"></input>
-                </div>
+                <InputText className="FilterSearch" placeholder="Search" />
+                <InputText className="FilterSelect" placeholder="Select" />
+                <button className="AddUser ButtonWithIcon"></button>
             </div>
 
-            <table>
-                <tr className="header">
-                    {/* <th>Avatar</th> */}
-                    <th>User</th>
-                    <th>Creation</th>
-                    <th>Username</th>
-                    <th>Birth</th>
-                </tr>
-                {
-                    users.map((user, index) => {
-                        return (
-                            <tr className="list">
-                                {/* <td><img src={require(`${user.username}.png`).default}></img></td> */}
-                                <td>{user.name}</td>
-                                <td>{user.email}</td>
-                                <td>{user.name}</td>
-                                <td>{user.name}</td>
-                            </tr>
-                        )
-                    })
-                }
-            </table>
+            <UserList />
         </div>
     )
 }
