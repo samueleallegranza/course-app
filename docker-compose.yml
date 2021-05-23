@@ -1,0 +1,43 @@
+version: '2'
+services:
+  mysql:
+    container_name: course-app-mysql
+    restart: always
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 'mysql'
+      MYSQL_USER: 'backend'
+      MYSQL_PASS: 'mysql'
+    volumes:
+      - my_datavolume:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  phpmyadmin:
+    container_name: course-app-phpmyadmin
+    restart: always
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - mysql
+    ports:
+      - 8080:80
+    environment:
+      PMA_HOST: mysql   
+
+  mosquitto:
+    container_name: course-app-mosquitto
+    image: eclipse-mosquitto
+    volumes:
+    - "/srv/mosquitto/config:/mosquitto/config"
+    - "/srv/mosquitto/log:/mosquitto/log"
+    - "/srv/mosquitto/data/:/mosquitto/data"
+    restart: always
+    ports:
+    - "1883:1883"
+    - "9001:9001"
+
+
+volumes:
+  my_datavolume:
+
+# docker-compose -f -d docker-compose-mysql.yml up --build

@@ -3,9 +3,11 @@ import './ButtonIcon.scss';
 
 const ButtonIcon = (props) => {
     return (
-        <button className="ButtonIcon">
-            {props.children}
-        </button>
+        <div>
+            <button className="ButtonIcon">
+                {props.children}
+            </button>
+        </div>
     )
 }
 

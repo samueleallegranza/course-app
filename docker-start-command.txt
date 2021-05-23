@@ -15,4 +15,9 @@ docker run -p 5432:5432 -d \
         postgres
 
 MYSQL
-https://migueldoctor.medium.com/run-mysql-phpmyadmin-locally-in-3-steps-using-docker-74eb735fa1fc
+// https://migueldoctor.medium.com/run-mysql-phpmyadmin-locally-in-3-steps-using-docker-74eb735fa1fc
+docker run --name course-app-mysql -e MYSQL_ROOT_PASSWORD=mysql -d mysql:8.0.1
+
+
+PHPMYADMIN
+docker run --network=course-app_default --name course-app-phpmyadmin -d --link course-app-mysql:db -p 8081:80 phpmyadmin/phpmyadmin

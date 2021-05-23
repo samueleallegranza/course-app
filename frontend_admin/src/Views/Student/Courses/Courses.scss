@@ -1,0 +1,28 @@
+.Courses-Page {
+    max-width: 50vw;
+    margin: 0 auto;
+
+    .Heading {
+        margin-top: 70px;
+
+        h1 {
+            font-weight: bold;
+            font-size: 72px;
+            letter-spacing: -0.03em;
+            text-align: center;
+        }
+        p {
+            width: 68%;
+            margin: 0 auto;
+            font-weight: normal;
+            font-size: 25px;
+            line-height: 39px;
+            text-align: center;
+            color: #445b78;
+        }
+    }
+
+    .CourseList {
+        margin-top: 100px;
+    }
+}

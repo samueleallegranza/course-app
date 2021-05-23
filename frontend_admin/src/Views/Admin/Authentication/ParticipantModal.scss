@@ -1,0 +1,24 @@
+.Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ModalContent {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    margin: 0 auto;
+    background-color: aliceblue;
+    border: '2px solid #000',
+}
+
+.badge-container {
+    width: 300px;
+    height: 400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

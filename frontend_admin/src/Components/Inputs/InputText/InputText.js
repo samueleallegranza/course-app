@@ -4,7 +4,7 @@ import './InputText.scss';
 const InputText = (props) => {
     return (
         <input 
-            className="InputText" 
+            className="ADM-InputText"
             type="text" 
             placeholder={props.placeholder}>
         </input>

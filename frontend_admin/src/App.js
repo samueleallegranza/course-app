@@ -1,11 +1,12 @@
 import Router from './Router'
-import './Style/Baseline.scss'
-import './Style/Content-globals.scss'
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {
   return (
     <div>
-      <Router />
+      <BrowserRouter>
+        <Router />
+      </BrowserRouter>
     </div>
   );
 }

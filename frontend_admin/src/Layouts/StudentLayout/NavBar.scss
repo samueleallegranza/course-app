@@ -1,0 +1,41 @@
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch ; //full height
+
+    margin: 45px 90px 0px 90px;
+    
+    .Logo {
+        font-size: 25px;
+        .Left {font-weight: bold;}
+        .Right {font-weight: normal;}
+    }
+
+    .Navigation {
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: -0.03em;
+
+        display: flex;
+        align-items: center;
+
+        a {
+            float: left;    // to keep everything on one line
+            margin: 0 18px;
+        }
+        .divider {
+            float: left;    // to keep everything on one line
+            background: #c2c2c2;
+            width: 1px;
+            margin: 0 15px;
+            height: 100%;
+        }
+        .button {
+            background: #3880ff;
+            padding:7px 20px;
+            border-radius: 12px;
+            color: white;
+        }
+    }
+}

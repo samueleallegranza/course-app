@@ -1,0 +1,27 @@
+.ButtonTextIcon {
+    background-color: #5568e8;
+	border: none;
+	cursor: pointer;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 100%;
+    padding: 0 10%;
+    border-radius: 8px;
+
+    svg {
+        margin-right: 10px;
+        font-size: 20px;
+        color: white;
+    }
+
+    span {
+        overflow: hidden;
+        white-space: nowrap;
+        font-weight: 600;
+        font-size: 16px;
+        color: white;
+    }
+}

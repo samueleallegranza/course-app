@@ -1,0 +1,74 @@
+.LiveMap-Rooms {
+    margin: 40px;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+
+    height: 100%;
+    
+    .Room {
+        border-radius: 15px;
+        border-color: #b6b5cf;
+        border-style: solid;
+        border-width: 1px;
+        
+        background: #dddcf6;
+        margin-bottom: 20px;
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    
+        height: 36%;
+
+        .Identifier {
+            flex-basis: 50%;
+            display: flex;
+            align-items: flex-end;
+
+            color: gray;
+            .Name {
+                font-size: 27px;
+                margin-left: 8px;
+            }
+            .Icon svg {
+                font-size: 27px;
+            }
+        }
+        .Participants {
+            flex-basis: 50%;
+            width: 70%;
+            display: flex;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+
+            .Participant {
+                background: #5568e8;
+                width: 30px;
+                height: 30px;
+                color: white;
+                margin: 3px;
+                border-radius: 100%;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    
+    .Corridor {
+        flex: 0 0 100%;
+        height: 20%;
+    }
+
+    .Standard {
+        flex: 0 0 25%;
+    }
+}
