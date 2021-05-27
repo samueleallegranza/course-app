@@ -18,4 +18,7 @@ module.exports = app => {
 
     // // Delete all students
     // app.delete("/students", students.deleteAll);
+
+    // Authenticate a student, given password (hashed) and its username
+    app.post("/students/auth", students.auth);
 };

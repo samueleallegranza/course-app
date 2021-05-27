@@ -24,7 +24,11 @@ import StudentCourses from './Views/Student/Courses/Courses';
 import LoginStudent from './Views/Student/LoginStudent/LoginStudent';
 import LoginAdmin from './Views/Student/LoginAdmin/LoginAdmin';
 import Signup from './Views/Student/Signup/Signup';
+import Subscriptions from './Views/Student/Subscriptions/Subscriptions';
+import Certificates from './Views/Student/Certificates/Certificates';
 
+// Authentication controls
+import WithAuthStudent from './Auth/WithAuthStudent';
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -77,8 +81,7 @@ const AdminRoutes = ({match}) => {
     )
 }
 
-const StudentRoutes = ({ match }) => { 
-    console.log(`${match.url}/courses`)
+const StudentRoutes = ({ match }) => {
     return (
         <Switch>
             <Route path={`${match.url}`} exact>
@@ -107,7 +110,7 @@ const StudentRoutes = ({ match }) => {
         
             <Route path={`${match.url}login/student`} exact>
                 <StudentAuthLayout>
-                    <LoginStudent />
+                    <LoginStudent/>
                 </StudentAuthLayout>
             </Route>
 
@@ -123,6 +126,22 @@ const StudentRoutes = ({ match }) => {
                 </StudentAuthLayout>
             </Route>
 
+            <Route path={`${match.url}subscriptions`} exact>
+                <WithAuthStudent>
+                    <StudentLayout>
+                        <Subscriptions />
+                    </StudentLayout>
+                </WithAuthStudent>
+            </Route>
+
+            <Route path={`${match.url}certificates`} exact>
+                <WithAuthStudent>
+                    <StudentLayout>
+                        <Certificates />
+                    </StudentLayout>
+                </WithAuthStudent>
+            </Route>
+
         </Switch>
         
     )
@@ -130,12 +149,13 @@ const StudentRoutes = ({ match }) => {
 
 
 const Router = () => {
+
     return (
         <BrowserRouter>
             <Switch>
                 
                 <Route path='/admin' component={AdminRoutes} />
-                <Route path='' component={StudentRoutes}/>
+                <Route path='' component={StudentRoutes} />
 
             </Switch>
         </BrowserRouter>    

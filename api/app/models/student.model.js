@@ -112,4 +112,23 @@ Student.remove = (id, result) => {
 //     });
 // };
 
+
+// Get student given username and password (used for auth)
+Student.auth = (username, pwd_hash, result) => {
+    sql.query(`SELECT * FROM students WHERE username='${username}' AND pwd_hash='${pwd_hash}'`, (err, res) => {
+        if(err) {
+            console.log("error: ", err);
+            result(err, null);
+            return;
+        }
+        if(res.length < 1) {
+            result({ kind: "not_found" }, null);
+            return;
+        }
+
+        console.log(`authenticated student ${username}`);
+        result(null, res);
+    });
+}
+
 module.exports = Student;

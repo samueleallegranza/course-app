@@ -1,9 +1,12 @@
 const Student = require("../models/student.model.js");
 
+const jwt = require('jsonwebtoken');
+const jwt_secret = "secret_test";
+
 // Create and Save a new student
 exports.create = (req, res) => {
-    // Validate request
-    if (!req.body) {
+    // Validate request (to be realistic, every field should be checked)
+    if (!req.body || !req.body.pwd_hash) {
         res.status(400).send({
             message: "Content can not be empty!"
         });
@@ -11,7 +14,7 @@ exports.create = (req, res) => {
 
     // Create a student
     const student = new Student({
-        username: req.body.email,
+        username: req.body.username,
         full_name: req.body.full_name,
         email: req.body.email,
         birth: req.body.birth,
@@ -116,3 +119,26 @@ exports.delete = (req, res) => {
 //         else res.send({ message: `All Customers were deleted successfully!` });
 //     });
 // };
+
+
+exports.auth = (req, res) => {
+    const { username, password } = req.body;
+    const role = "student"
+
+    // Check if credentials are correct
+    console.log(`Authentication of '${username}' with password '${password}'`);
+    Student.auth(username, password, (err, data) => {
+        if (err) {
+            // An error occurred: invalid credentials or DB error
+            res.status(401).send();
+        } else {
+            // Issue token
+            const payload = { username, role };
+            const token = jwt.sign(payload, jwt_secret, {
+                expiresIn: '1h'
+            });
+            res.cookie('token', token, { httpOnly: true })
+                .sendStatus(200);
+        }
+    })
+};

@@ -20,22 +20,25 @@ const nthDaySuffix = function (d) {
     }
 }
 
-const Courses = () => {
+const Courses = (props) => {
 
     const [events, setEvents] = useState([])
+    const [loading, setLoading] = useState(true)
 
     useEffect(() => {
-        if (events.length == 0) {
-            // Get the event list
-            getAll().then(res => {
-                console.log(res);
-                setEvents(res);
-            })
+        if(loading) {
+            if (events.length == 0) {
+                // Get the event list
+                getAll().then(res => {
+                    setLoading(false)
+                    setEvents(res);
+                })
+            }
         }
-    }, [events])
+    }, [loading])
 
     return (
-        <div className="Courses-Page">
+        <div className="StudentContent Courses-Page">
             <div className="Heading">
                 <h1>Courses</h1>
                 <p>We run one-day courses, consisting of multiple parallel tracks, to provide you with a flexible and tailor-made experience. </p>
@@ -60,6 +63,7 @@ const Courses = () => {
                             difficulty={event.difficulty}
                             occupied_spots={event.occupied_spots}
                             idtemplate={event.idtemplate}
+                            alertTrigger={props.alertTrigger}
                         />)
                     })
                 }

@@ -37,5 +37,25 @@
             border-radius: 12px;
             color: white;
         }
+        
+        .arrow{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            svg {
+                font-size: 25px;
+                color: black;
+            }
+        }
+
+        .avatar {
+            width: 32px;
+            height: 32px;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
     }
 }
