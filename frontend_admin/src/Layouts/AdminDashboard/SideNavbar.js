@@ -13,11 +13,11 @@ const links = [
         'url': "/admin/users",
         'icon': PeopleIcon
     },
-    {
-        'name': "Rooms",
-        'url': "/admin/rooms",
-        'icon': RoomIcon
-    },
+    // {
+    //     'name': "Rooms",
+    //     'url': "/admin/rooms",
+    //     'icon': RoomIcon
+    // },
     {
         'name': "Authentication",
         'url': "/admin/authentication",
@@ -33,18 +33,28 @@ const links = [
 
 const SideNavbar = () => {
     return(
-        <div className="SideNavbar-container">
-            {
-                links.map((link, index) => {
-                    const Icon = link.icon;
-                    return (
-                        <NavLink to={link.url} className='element' activeClassName="active">
-                            <Icon className="icon" />
-                            <span className="text">{link.name}</span>
-                        </NavLink>
-                    )
-                })
-            }
+        <div className="SideBar">
+            <div className="Logo">
+                <NavLink to={'/admin/users'}>
+                    <span className="Left">Office</span>
+                    <span className="Right">Talks</span>
+                    <div className="AdminTag">Admin</div>
+                </NavLink>
+            </div>
+            <div className="Links">
+
+                {
+                    links.map((link, index) => {
+                        const Icon = link.icon;
+                        return (
+                            <NavLink to={link.url} className='element' activeClassName="active">
+                                <Icon className="icon" />
+                                <span className="text">{link.name}</span>
+                            </NavLink>
+                        )
+                    })
+                }
+            </div>
         </div>
     );
 }

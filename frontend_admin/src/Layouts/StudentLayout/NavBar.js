@@ -3,9 +3,8 @@ import './NavBar.scss';
 
 import Cookies from 'universal-cookie';
 import { NavLink } from 'react-router-dom';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
-import Dropdown from './Dropdown';
+import Dropdown from '../../Components/Dropdown/Dropdown';
 
 // Check if user is logged in and its role is 'student'
 const isStudentLoggedIn = () => {

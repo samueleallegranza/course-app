@@ -1,0 +1,68 @@
+.Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ModalContent {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: #e0e0e0;
+    border-radius: 25px;
+
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas: 
+        "title title"
+        "badge nfc"
+        "btn btn";
+
+    h1 {
+        grid-area: title;
+        margin-top: 2%;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .btn {
+        grid-area: btn;
+        place-self: center stretch;
+
+        background: #3880ff;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;    
+        border: none;
+        border-radius: 6px;
+        padding: 5px 20px;
+        cursor: pointer;
+    
+        align-self: end;
+    }
+
+    .BadgeContainer {
+        grid-area: badge;
+
+        .BadgeWrapper {
+            width: 43%;
+            height: 36%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+
+    .Nfc {
+        grid-area: nfc;
+    }
+
+}
+
+

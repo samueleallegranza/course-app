@@ -1,63 +1,24 @@
-.Background {
-    background: #e6e6ea;
-    position: absolute; top: 0; left: 0;
-    height: 100%;
+.Window {
     width: 100%;
-    display: flex;  // to center
-    align-items: center;
-    justify-content: center;
-
-
-    .Window {
-        width: 95%;
-        height: 95%;
-        border-radius: 50px;
-        background: white;
-        box-shadow:  20px 20px 60px #a4a4a4, -20px -20px 60px #ffffff;
-
-        display: grid;
-        grid-template-columns: 350px auto;
-        grid-template-rows: 100px auto;
-        grid-template-areas: 
-            "logo appbar"
-            "sidebar content"
-    }
-
-    .AppBar {
-        grid-area: appbar;
-    }
-
-    .Logo {
-        grid-area: logo;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-
-        span {
-            font-size: 30px;
-            font-weight: 600;
-            color: white;
-            background: linear-gradient(#e983ec 0%, #6767db 100%);
-            box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
-            padding: 10px 30px;
-            border-radius: 40px;
-        }
-    }
+    height: 100%;
 
     .SideNavbar {
-        grid-area: sidebar;
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+
+        background: #F5F5F5;
     }
 
-    .Content {
-        grid-area: content;
-        background: #f7f6fb;   
-        border-top-left-radius: 60px;
-        border-top-right-radius: 0px;
-        border-bottom-left-radius: 0px;
-        border-bottom-right-radius: 60px;
+    .Page {
+        margin-left: 20%;
+        box-sizing: border-box;
 
-        padding: 20px 50px;
-        color: #515151;
+        .Content {
+            margin: 40px 4%;
+        }
     }
 }
-

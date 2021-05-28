@@ -42,10 +42,21 @@ const ParticipantsList = (props) => {
                     missing.map((participant, idx) => {
                         return (
                             <div>
-                                <span>
-                                    {participant.full_name} - {participant.username} -
-                                    <button onClick={() => handleModalOpen(participant)}>Confirm presence</button>
-                                </span>
+                                <div className="User ParticipantsList-dimensions">
+                                    <img className="Avatar" src={require('../../../Media/avatar.png').default} />
+                                    <div className="User">
+                                        <div className="Name">{participant.full_name}</div>
+                                        <div className="Email">{participant.email}</div>
+                                    </div>
+                                    <div className="Controls">
+                                        <button 
+                                            className="Confirm"
+                                            onClick={() => handleModalOpen(participant)}
+                                        >
+                                            Confirm presence
+                                        </button>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })
@@ -58,9 +69,16 @@ const ParticipantsList = (props) => {
                     present.map((student, idx) => {
                         return (
                             <div>
-                                <span>
-                                    {student.full_name} - {student.username}
-                                </span>
+                                <div className="User ParticipantsList-dimensions">
+                                    <img className="Avatar" src={require('../../../Media/avatar.png').default} />
+                                    <div className="User">
+                                        <div className="Name">{student.full_name}</div>
+                                        <div className="Email">{student.email}</div>
+                                    </div>
+                                    <div className="Controls">
+                                        
+                                    </div>
+                                </div>
                             </div>
                         )
                     })

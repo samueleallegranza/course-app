@@ -1,28 +1,54 @@
-.SideNavbar-container {
-    display: flex;
-    flex-direction: column;
-    margin: 30px 0 30px 50px ;
+.SideBar {
+    
+    .Logo {
+        margin: 24% auto;
+        width: fit-content;
+        font-size: 28px;
+        
+        .Left {font-weight: bold;}
+        .Right {font-weight: normal;}
+    
+        .AdminTag {
+            background:  #3880ff;
+            color: white;
+            border-radius: 20px;
+            font-weight: 500;
+            font-size: 13px;
+            padding: 2px 15px;
 
-    .active {
-        background: #f1f4fd;
+            width: fit-content;
+            margin: 0 auto;
+        }
     }
 
-    .element {
-        margin: 10px 40px 0 0;
-        padding: 18px 20px;
-        color: #5568e8;
+    .Links {
         display: flex;
-        align-items: center;
-        border-radius: 13px;
+        flex-direction: column;
+        margin: 30px 0 30px 50px ;
 
-        .icon {
-            font-size: 32px;
+        .active {
+            background: #3880ff !important;
+            color: white !important;
         }
 
-        .text {
-            margin-left: 15px;
-            font-size: 19px;
-            text-decoration: none;
+        .element {
+            margin: 12px 25% 12px 0;
+            padding: 13px 0 13px 22px;
+            color: #767b98;
+            display: flex;
+            align-items: center;
+            border-radius: 13px;
+
+            .icon {
+                font-size: 22px;
+            }
+
+            .text {
+                margin-left: 15px;
+                font-size: 18px;
+                font-weight: 500;
+                text-decoration: none;
+            }
         }
     }
 }

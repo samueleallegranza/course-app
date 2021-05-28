@@ -59,17 +59,18 @@ const SelectNfcTag = (props) => {
     }
 
     return (
-        <div>
-            <select onChange={handleChange}>
+        <>
+            <select className="Select" onChange={handleChange}>
                 {
                     props.availableNfc.map((elm, idx) => {
                         return <option value={elm}>Card {elm}</option>
                     })
                 }
             </select>
-        </div>
+        </>
     )
 }
+
 
 const ParticipantModal = (props) => {
     
@@ -118,32 +119,48 @@ const ParticipantModal = (props) => {
                     <div className="ModalContent">
                         <h1>{props.participant.full_name}</h1>
                         
-                        <div>Badge</div>
-                        <iframe
-                            id="badge"
-                            src={`/admin/badge?printer_mode=true&full_name=${props.participant.full_name}&email=${props.participant.email}&birth=${props.participant.birth}&event=${props.ongoingEventName}`}
-                            style={{ display: 'none' }}
-                            title="Badge"
-                            onLoad={() => {setIsBadgeLoading(false)}}
-                        />
-                        <div className="badge-container">
-                            <Badge 
-                                full_name={props.participant.full_name}
-                                email={props.participant.email}
-                                birth={props.participant.birth}
-                                event={props.ongoingEventName}
+                        <div className="BadgeContainer">
+                            <h2>Badge</h2>
+                            <iframe
+                                id="badge"
+                                src={`/admin/badge?printer_mode=true&full_name=${props.participant.full_name}&email=${props.participant.email}&birth=${props.participant.birth}&event=${props.ongoingEventName}`}
+                                style={{ display: 'none' }}
+                                title="Badge"
+                                onLoad={() => {setIsBadgeLoading(false)}}
                             />
+                            <div className="BadgeWrapper">
+                                <Badge
+                                    full_name={props.participant.full_name}
+                                    email={props.participant.email}
+                                    birth={props.participant.birth}
+                                    event={props.ongoingEventName}
+                                />
+                            </div>
+                            <button 
+                                className="btn"
+                                onClick={() => printBadge('badge')}
+                            >
+                                {isBadgeLoading ? "loading..." : "Print"}
+                            </button>
                         </div>
-                        <button onClick={() => printBadge('badge')}>
-                            {isBadgeLoading ? "loading..." : "Print"}
-                        </button>
-                        
-                        <SelectNfcTag
-                            availableNfc={availableNfc}
-                            setSelectedNfc={setSelectedNfc}
-                            selectedNfc={selectedNfc}
-                        />
-                        <button onClick={confirmPresence}>confirm presence</button>
+
+                        <div className="Nfc">
+                            <h2>NFC Card</h2>
+                            <div className="SelectNFc">
+                                <SelectNfcTag
+                                    availableNfc={availableNfc}
+                                    setSelectedNfc={setSelectedNfc}
+                                    selectedNfc={selectedNfc}
+                                />
+                            </div>
+                            <button 
+                                className="btn" 
+                                onClick={confirmPresence}
+                            >
+                                confirm presence
+                            </button>
+                        </div>
+                                                
                     </div>
                 </Modal>
             </div>

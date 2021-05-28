@@ -29,6 +29,7 @@ import Certificates from './Views/Student/Certificates/Certificates';
 
 // Authentication controls
 import WithAuthStudent from './Auth/WithAuthStudent';
+import WithAuthAdmin from './Auth/WithAuthAdmin';
 
 function useQuery() {
     return new URLSearchParams(useLocation().search);
@@ -38,6 +39,7 @@ const AdminRoutes = ({match}) => {
     let query = useQuery();
 
     return(
+
         <Switch>
             {/* 
                 NOT WORKING REDIRECT
@@ -45,27 +47,33 @@ const AdminRoutes = ({match}) => {
             */}
 
             <Route path={`${match.url}/users`} exact>
-                <AdminLayout>
-                    <AdminUsers />
-                </AdminLayout>
+                <WithAuthAdmin>
+                    <AdminLayout>
+                        <AdminUsers />
+                    </AdminLayout>
+                </WithAuthAdmin>
             </Route>
 
-            <Route path={`${match.url}/rooms`} exact>
+            {/* <Route path={`${match.url}/rooms`} exact>
                 <AdminLayout>
 
                 </AdminLayout>
-            </Route>
+            </Route> */}
 
             <Route path={`${match.url}/authentication`} exact>
-                <AdminLayout>
-                    <AdminAuthentication />
-                </AdminLayout>
+                <WithAuthAdmin>
+                    <AdminLayout>
+                        <AdminAuthentication />
+                    </AdminLayout>
+                </ WithAuthAdmin>
             </Route>
 
             <Route path={`${match.url}/livemap`} exact>
-                <AdminLayout>
-                    <AdminLiveMap />
-                </AdminLayout>
+                <WithAuthAdmin>
+                    <AdminLayout>
+                        <AdminLiveMap />
+                    </AdminLayout>
+                </ WithAuthAdmin>
             </Route>
 
             <Route path={`${match.url}/badge`}>

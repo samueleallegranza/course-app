@@ -11,7 +11,7 @@
     .Header {
         margin-bottom: 20px;
         font-size: 21px;
-        color: #5568e8;
+        color: #3880ff;
         display: grid;
         grid-template-rows: 20px;
 
@@ -33,7 +33,7 @@
         // Scrollbar (styling only on Firefox)
         overflow-x: hidden; 
         overflow-y: auto;
-        max-height: 490px;
+        max-height: 60vh;
         scrollbar-color: rgb(189, 189, 189) rgba(255, 255, 255, 0);
         scrollbar-width: thin;
         

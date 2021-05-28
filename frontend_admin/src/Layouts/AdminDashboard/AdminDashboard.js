@@ -1,7 +1,6 @@
 import React from 'react';
 import './Main.scss'
 
-
 import SideNavbar from './SideNavbar';
 import AppBar from './AppBar';
 
@@ -11,17 +10,12 @@ import '../../Style/Admin_Content-globals.scss'
 
 const Main = (props) => {
     return(
-        <div className="Background">
-            <div className="Window">
-                <div className="Logo">
-                    <span>Office.</span>
-                </div>
-                <div className="AppBar">
-                    <AppBar />
-                </div>
-                <div className="SideNavbar">
-                    <SideNavbar />
-                </div>
+        <div className="Window">
+            <div className="SideNavbar">
+                <SideNavbar />
+            </div>
+            <div className="Page">
+                <AppBar />
                 <div className="Content">
                     {props.children}
                 </div>

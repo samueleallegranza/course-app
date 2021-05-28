@@ -1,0 +1,58 @@
+.ParticipantsList-dimensions{
+    grid-template-columns: 70px 25% auto;
+    grid-template-areas:
+        "avatar user controls";
+    column-gap: 40px;
+}
+
+
+.ParticipantsList {
+    margin-left: 40px;
+    h2 {
+        font-weight: 600;
+        font-size: 32px;
+        text-align: left;
+        color: #515151;
+    }
+
+    .User {
+        width:100%;
+        margin-bottom: 10px;
+        display: grid;
+        
+        font-size: 18px;
+        font-weight: 400;
+        color: #7a7a7a;
+        
+        .Avatar {
+            grid-area: avatar;
+        }
+        .User {
+            grid-area: user;
+            align-self: center;
+            .Name {
+                font-size: 21px;
+                font-weight: 600;
+                color: #505050;
+            }
+        }
+        .Controls {
+            margin-right: 13%;
+            grid-area: controls;
+            justify-self: end;
+            align-self: center;
+
+            .Confirm {
+                background-color: #3880ff;
+                color: white;
+                padding: 4px 20px;
+                font-weight: 500;
+                font-size: 16px;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+        }
+
+    }
+}

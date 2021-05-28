@@ -26,7 +26,7 @@ const WithAuth = (props) => {
     }, [loading])
 
     if (loading) { return null }
-    if (redirect) { return <Redirect to="/login/student" /> }
+    if (redirect) { return <Redirect to="/login/admin" /> }
     return (<div>{props.children}</div>)
 }
 

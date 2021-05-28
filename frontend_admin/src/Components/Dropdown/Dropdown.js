@@ -36,11 +36,11 @@ export default function SimplePopover() {
     };
 
     const logout = () => {
-        console.log("Logout operation")
         const cookies = new Cookies()
-        cookies.remove('token');
-        cookies.remove('username');
-        cookies.remove('role');
+        cookies.remove('username', { path: '/' });
+        cookies.remove('token', { path: '/' });
+        cookies.remove('role', { path: '/' });
+        console.log("LOGOUT!")
         window.location.reload();
     }
 
