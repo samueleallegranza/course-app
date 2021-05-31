@@ -1,0 +1,98 @@
+.Modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ModalContent {
+    position: absolute;
+    width: 70%;
+    height: 70%;
+    background: #e0e0e0;
+    border-radius: 25px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    
+    h1 {
+        flex-basis: 100%;
+        height: 20px;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+    .btn {
+        background: #3880ff;
+        color: white;
+        font-weight: 500;
+        font-size: 16px;    
+        border: none;
+        border-radius: 6px;
+        padding: 5px 30px;
+        cursor: pointer;
+
+        width: fit-content;
+    }
+
+    .BadgeContainer {
+        flex-basis: 50%;
+        height: 450px;
+
+        display: flex;
+        flex-direction: column;
+    
+        .BadgeWrapper {
+            margin: 0 auto;
+            width: 300px;
+            height: 400px;
+        }
+
+        .btn {
+            margin: 20px auto;
+        }
+    }
+
+    .Nfc {
+        flex-basis: 50%;
+        display: flex;
+        flex-direction: column;
+
+        .SelectNFc {
+            margin: 30px auto;
+            width: 30%;
+
+            .Select {
+                padding: 2px 20px;
+                font-size: 16px;
+                box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+                background: #fff;
+                border: 1px solid #dedede;
+                border-radius: 11px;
+    
+                // Fix width 100%
+                box-sizing: border-box;
+                
+                -moz-appearance: none;
+                -webkit-appearance: none;
+                appearance: none;
+    
+                color: rgb(116, 116, 116);
+    
+            }
+            .Select option {
+                font-weight:normal;
+            }
+        }
+
+
+        .btn {
+            margin: 0 auto;
+        }
+    }
+}

@@ -1,0 +1,82 @@
+.ScheduleTable {
+    text-align: left;
+    width: 90%;
+    margin: 0 auto;
+
+    th {
+        font-weight: bold;
+        font-size: 21px;
+        letter-spacing: -0.03em;
+        color: #ef4d4d;
+
+        padding-bottom: 25px;
+    }
+
+    .time{
+        // Column styling
+        width: 18%;
+        padding: 0 28px 0 0;
+
+        // Cell styling
+        vertical-align: top;
+        text-align: right;
+        font-weight: normal;
+        font-size: 13px;
+        letter-spacing: -0.03em;
+        color: #787878;
+    }
+
+    .meeting {
+        // Column styling
+        width: 22%;
+        padding: 0 60px 40px 0;
+        vertical-align: top;
+        text-align: left;
+
+        .name {
+            display: block;
+            font-weight: 500;
+            font-size: 14px;
+            letter-spacing: -0.03em;
+            color: #020814;        
+            margin-bottom: 7px;    
+        }
+    
+        .info {
+            display: block;
+            font-weight: 300;
+            font-size: 12px;
+            letter-spacing: -0.03em;
+            color: #020814;
+        }
+    }
+
+
+    .BreakRow {
+        padding-bottom: 40px;
+
+        .BreakBox {
+            background-color: #ef4d4d;
+            text-align: center;
+    
+            border-radius: 11px;
+            padding: 9px;
+    
+            .name {
+                font-weight: 500;
+                font-size: 14px;
+                letter-spacing: -0.03em;
+                color: white;        
+                margin-bottom: 7px;    
+            }
+            
+            .info {
+                font-weight: 300;
+                font-size: 12px;
+                letter-spacing: -0.03em;
+                color: white;
+            }
+        }
+    }
+
+}

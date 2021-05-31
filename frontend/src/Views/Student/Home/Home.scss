@@ -1,0 +1,69 @@
+.Home-Page {
+    max-width: 61vw;
+    margin: 0 auto;
+    margin-top: 8vh;
+    
+    .Hero{
+        display: grid;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "presentation illustration";
+    
+        .Presentation {
+            grid-area: presentation;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .Title {
+                font-weight: bold;
+                font-size: 75px;
+                
+                .highlighted {
+                    color: #ef4d4d;
+                    border-bottom: 7px solid darken(rgba(239, 77, 77, 0.383), 10);
+
+                }
+            }
+            
+            .Subtitle {
+                font-weight: normal;
+                font-size: 25px;
+                line-height: 39px;
+                color: #445b78;
+                margin-top: 13%;
+            }
+
+            .CallToAction {
+                margin-top: 45px;
+                a {
+                    font-weight: 500;
+                    font-size: 18px;
+                    color: #fff;
+                    background: #3880ff;
+                    padding: 17px 23px;
+                    border-radius: 30px;
+
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: fit-content;
+
+                    svg {
+                        margin-left: 5px;
+                        font-size: 22px;
+                    }
+                }
+            }
+        }
+    
+        .Illustration {
+            grid-area: illustration;
+            img {
+                width: 100%;
+            }
+        }
+    }
+}

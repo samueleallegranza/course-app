@@ -1,0 +1,24 @@
+.Window {
+    width: 100%;
+    height: 100%;
+
+    .SideNavbar {
+        height: 100%;
+        width: 20%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        box-sizing: border-box;
+
+        background: #F5F5F5;
+    }
+
+    .Page {
+        margin-left: 20%;
+        box-sizing: border-box;
+
+        .Content {
+            margin: 40px 4%;
+        }
+    }
+}

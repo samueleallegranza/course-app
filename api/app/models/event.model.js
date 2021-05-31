@@ -149,11 +149,12 @@ Event.getAll = (result) => {
 
 Event.getTracks = (idtemplate, result) => {
     sql.query(`
-    SELECT DISTINCT event_tracks.name AS name
+    SELECT DISTINCT event_tracks.name AS name, idtrack
     FROM event_lessons, event_tracks
     WHERE
 	    codtrack=idtrack
-        AND codtemplate=${idtemplate};
+        AND codtemplate=${idtemplate}
+    ORDER BY idtrack ASC
     `, (err, res) => {
         if (err) {
             console.log("error: ", err);
@@ -196,6 +197,7 @@ Event.getSchedule = (idtemplate ,result) => {
         ) AS schedule
         LEFT JOIN rooms ON codroom = idroom
         LEFT JOIN teachers ON codteacher = idteacher
+        ORDER BY time_start ASC, idtrack ASC
     `, (err, SQL_schedule) => {
 
         if (err) {

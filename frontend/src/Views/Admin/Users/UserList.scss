@@ -1,0 +1,78 @@
+.UserList-dimensions{
+    grid-template-columns: 70px 25% 12% 25% auto;
+    grid-template-areas:
+        "avatar user type username deletebtn";
+    column-gap: 40px;
+}
+
+.UserList {
+    margin: 30px 4% 0 4%;
+
+    .Header {
+        margin-bottom: 20px;
+        font-size: 21px;
+        color: #3880ff;
+        display: grid;
+        grid-template-rows: 20px;
+
+        .User {
+            grid-area: user
+        }
+        .Type {
+            grid-area: type;
+        }
+        .Username {
+            grid-area: username;
+        }
+    }
+
+    .List {
+        display: flex;
+        flex-direction: column;
+
+        // Scrollbar (styling only on Firefox)
+        overflow-x: hidden; 
+        overflow-y: auto;
+        max-height: 60vh;
+        scrollbar-color: rgb(189, 189, 189) rgba(255, 255, 255, 0);
+        scrollbar-width: thin;
+        
+        .User {
+            width:100%;
+            margin-bottom: 10px;
+            display: grid;
+            
+            font-size: 18px;
+            font-weight: 400;
+            color: #7a7a7a;
+            
+            .Avatar {
+                grid-area: avatar;
+            }
+            .User {
+                grid-area: user;
+                align-self: center;
+                .Name {
+                    font-size: 21px;
+                    font-weight: 600;
+                    color: #505050;
+                }
+            }
+            .Type {
+                grid-area: type;
+                align-self: center;
+            }
+            .Username {
+                grid-area: username;
+                align-self: center;
+            }
+            .DeleteBtn{
+                grid-area: deletebtn;
+                align-self: center;
+                justify-self: end;
+                margin-right: 18%;
+            }
+
+        }
+    }
+}

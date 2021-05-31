@@ -1,0 +1,15 @@
+.NavBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch ; //full height
+
+    margin: 45px 90px 0px 90px;
+    
+    .Logo {
+        font-size: 25px;
+        .Left {font-weight: bold;}
+        .Right {font-weight: normal;}
+    }
+
+}
